@@ -129,3 +129,13 @@ double *sobelYkernel(int size)
     return nullptr;
 }
 
+double gaussianFunction(double x, double sigma)
+{
+    return exp(-(x * x) / (2 * sigma * sigma));
+}
+
+double gaussianFunction(double x, double sigma, double exponent_multiplier)
+{
+    return (exponent_multiplier * exp(-(x * x) / (2 * sigma * sigma)));
+}
+

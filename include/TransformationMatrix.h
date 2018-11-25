@@ -49,5 +49,8 @@ void multiply_each(unsigned char *pixel_area, double *coefficients, int dimSize)
 
 void multiply_each(double *pixel_area, double *coefficients, int dimSize);
 
+double gaussianFunction(double x,double sigma);
+double gaussianFunction(double x,double sigma,double exponent_multiplier);
+
 double sum_coefficients(double *vector, int size);
 

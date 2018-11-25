@@ -14,17 +14,29 @@ u_char *multiply_and_sqrt_each_pixel(ImageDataClass *img1, ImageDataClass *img2)
 
 u_char median_filter(unsigned char pixel_area[], int dimSize);
 
-u_char sum_pixel_values(unsigned char pixel_area[], int dimSize);
+//u_char sum_pixel_values(unsigned char pixel_area[], int dimSize);
 
 u_char sum_pixel_values(double pixel_area[], int dimSize);
+
+double sum_pixel_values_double(const double *pixel_area, int dimSize);
 
 u_char sum_pixel_values_absolute(double pixel_area[], int dimSize);
 
 u_char sum_pixel_values_with_threshold(double pixel_area[], int dimSize);
 
+double * apply_gaussian_kernel_for_each(double * kernel,int dimSize, double sigma, double exponent_multiplier);
+double * apply_gaussian_kernel_for_each(double * kernel,int dimSize, double sigma);
+
+double * get_distance_kernel(double * kernel, int dimSize);
+
+
 void set_threshold(u_char threshold);
 
+double get_norm(int startX, int startY,int endX,int endY);
+
 u_char insertion_sort(unsigned char pixel_area[], int dimSize);
+
+unsigned char * bilateral_filer(ImageDataClass * imageData,int dimSize, double spatial_sigma, double r_sigma, BORDER_TYPE border_type);
 
 template<typename T>
 unsigned char *convolve(ImageDataClass *imageData, int dimSize, unsigned char (*transformation)(T *, int),

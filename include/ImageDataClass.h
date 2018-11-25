@@ -19,8 +19,6 @@ public:
     unsigned char const * getData();
     unsigned char *dataStart;
 
-private:
-
     unsigned char *getPixelAt(int row, int column);
 
 
